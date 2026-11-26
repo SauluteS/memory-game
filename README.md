@@ -1,2 +1,2 @@
 # memory-game
-memory game created as part of CA2 for RWAT
+memory game created as part of CA2 for RWAT - Saule Stancikaite C23405722
