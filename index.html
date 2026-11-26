@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA2</title>
+
+    <style>memory-game{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style>
+  <script type="module" crossorigin src="./assets/index-C4NskpsT.js"></script>
+</head>
+
+<body>
+    <!--------------------------- given ------------------------------>
+    <template id="shape-card-template">
+        <style>.card{height:var(--card-height);width:var(--card-width);border:var(--card-border) solid gray;transform-style:preserve-3d;transition:transform .6s;position:relative}.card-face-down{transform:rotateY(180deg)}.card-face-up{transform:rotateY(0)}.card-back,.card-front{backface-visibility:hidden;position:absolute}.card-back{transform:rotateY(180deg)}</style>
+        <div class="card card-face-down">    
+            <svg class="card-front" height="100" width="100">
+                <polygon id="triangle" points="50,11 5,89 95,89" fill-opacity="0" />
+                <rect id="square" height="80" width="80" x="10" y="10" fill-opacity="0" />
+                <circle id="circle" r="40" cx="50" cy="50" fill-opacity="0" />
+            </svg>
+            <svg class="card-back" height="100" width="100" style="background-color: gray;">
+                <text x="33" y="75" font-size="80" fill="black">?</text>
+            </svg>
+        </div>
+    </template>
+
+    <!--my own memory game -->
+    <template id="memory-game-template">
+        <style>:host{-webkit-user-select:none;user-select:none;display:inline-block}.board{grid-template-columns:repeat(var(--columns), var(--card-width));grid-gap:10px;display:grid}.board[hidden]{display:none}shape-card{cursor:pointer}.message{margin-top:12px;font-weight:700}.message.error{color:red}.play-again,.show-average{cursor:pointer;margin-top:12px;padding:6px 14px}.average-result{margin-top:8px}</style>
+        <div class="board"></div>
+        <div class="message" hidden></div>
+        <button class="play-again" hidden>Play Again</button>
+        <button class="show-average">Show Average Clicks</button>
+        <div class="average-result"></div>
+    </template>
+ 
+    <!-- ************* your element rendering (the name will be different!) -->
+    <memory-game size="3x4"></memory-game>
+</body>
+</html>
